@@ -36,7 +36,6 @@ router.post('/:id/posts', (req, res) => {
 });
 
 router.get('/', (req, res) => {
-  users.get('/', (req, res) => {
     users.get()
     .then(Users => {
       res.json(Users);
@@ -46,8 +45,7 @@ router.get('/', (req, res) => {
         message: "Could not retrieve users"
       })
     })
-  })
-});
+  });
 
 router.get('/:id', (req, res) => {
   const { id } = req.params;
@@ -140,7 +138,7 @@ function validateUserId(req, res, next) {
 }
 
 function validateUser(req, res, next) {
-  const { name, body }
+  const { name, body } = req.body;
 
   users.get
   .then(user => {

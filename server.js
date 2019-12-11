@@ -9,7 +9,7 @@ server.get('/', (req, res) => {
 //custom middleware
 
 function logger(req, res, next) {
-  console.log(`${req.ip}`)
+  console.log(`request ip address: ${req.ip}`)
   next()
 }
 

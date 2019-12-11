@@ -1,10 +1,10 @@
 // code away
 const express= require('express')
 const helmet= require('helmet')
+const server= require('./server')
 const userRouter= require('./users/userRouter')
 const postRouter= require('./posts/postRouter')
 
-const server= express()
 
 server.use(helmet())
 
